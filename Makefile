@@ -56,8 +56,6 @@ protoc-go-gateway:
 	--grpc-gateway_opt standalone=true \
 	--grpc-gateway_opt generate_unbound_methods=true \
 	./proto/hello/*.proto \
-	./proto/bank/*.proto ./proto/bank/type/*.proto \
-	./proto/resiliency/*.proto
 
 
 .PHONY: protoc-openapiv2-gateway
