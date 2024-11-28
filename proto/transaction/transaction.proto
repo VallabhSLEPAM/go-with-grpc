@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-option go_package="github.com/go-with-grpc/grpc/protogen/go/transaction";
+option go_package="github.com/VallabhSLEPAM/go-with-grpc/protogen/go/transaction";
 
 message Cart{
   string cart_id = 1 [json_name = "cart_id"];

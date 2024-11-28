@@ -1,5 +1,4 @@
-# Replace this with your own github.com/<username>/<repository>
-GO_MODULE := github.com/VallabhSLEPAM/grpc
+GO_MODULE := github.com/VallabhSLEPAM/go-with-grpc
 
 .PHONY: clean
 clean:
@@ -17,8 +16,6 @@ protoc-go:
 	protoc --go_opt=module=${GO_MODULE} --go_out=. \
 	--go-grpc_opt=module=${GO_MODULE} --go-grpc_out=. \
 	./proto/hello/*.proto ./proto/payment/*.proto ./proto/transaction/*.proto \
-	./proto/bank/*.proto ./proto/bank/type/*.proto \
-	./proto/resiliency/*.proto \
 
 .PHONY: build
 build: clean protoc-go
@@ -59,8 +56,6 @@ protoc-go-gateway:
 	--grpc-gateway_opt standalone=true \
 	--grpc-gateway_opt generate_unbound_methods=true \
 	./proto/hello/*.proto \
-	./proto/bank/*.proto ./proto/bank/type/*.proto \
-	./proto/resiliency/*.proto
 
 
 .PHONY: protoc-openapiv2-gateway

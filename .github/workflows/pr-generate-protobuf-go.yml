@@ -4,7 +4,7 @@ name: Pull Request - Check Protobuf - Go
 # It will only run if the pull request includes changes to files matching the pattern proto/**.proto (i.e., .proto files located under the proto/ directory)
 
 on:
-  pull-request:
+  pull_request:
     paths:
       - 'proto/**.proto'
 

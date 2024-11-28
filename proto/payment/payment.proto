@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package payment;
 
-option go_package="github.com/VallabhSKEPAM/grpc/protogen/go/payment";
+option go_package="github.com/VallabhSLEPAM/go-with-grpc/protogen/go/payment";
 
 message PaymentRequest{
   string currency = 2;
