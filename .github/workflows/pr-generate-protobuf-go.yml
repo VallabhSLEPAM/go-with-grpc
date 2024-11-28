@@ -1,0 +1,36 @@
+name: Pull Request - Check Protobuf - Go
+
+# The following workflow is triggered on pull requests.
+# It will only run if the pull request includes changes to files matching the pattern proto/**.proto (i.e., .proto files located under the proto/ directory)
+
+on:
+  pull-request:
+    paths:
+      - 'proto/**.proto'
+
+# The job is named generate-protobuf-go and will run on a machine with the ubuntu-latest image.
+jobs:
+  generate-protobuf-go:
+    runs-on: ubuntu-latest
+    steps:
+      # This step uses the actions/checkout action to clone the repository's code for the branch associated with the pull request.
+      # The ref is set to the github.head_ref, which refers to the branch the pull request originates from.
+      - name: Checkout source
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ github.head_ref }}
+      #       Installs Go version 1.20 on the runner.
+      # check-latest: false specifies not to check for a newer patch version within the 1.20 series.
+      # cache: true enables caching of Go modules to speed up the build process.
+      - name: Install Go
+        uses: actions/setup-go@v3
+        with:
+          go-version: '1.20'
+          check-latest: false
+          cache: true
+      # Executes the command make pipeline-build to generate the Go source files from the .proto files.
+      # This assumes a Makefile exists with a target named pipeline-build, which likely runs protoc or another command to generate Go code.
+      - name: Generate Go source
+        shell: bash
+        run: |
+          make pipeline-build
