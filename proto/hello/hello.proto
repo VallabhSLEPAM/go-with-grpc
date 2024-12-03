@@ -17,6 +17,9 @@ service HelloService{
   //Unary Server
   rpc SayHello(HelloRequest) returns (HelloResponse) {}
 
-  //Server stream
+  // Server stream: Send greetings 10 times with 1 second interval
   rpc HelloServerStream(HelloRequest) returns (stream HelloResponse){}
+
+  // Client stream: Send 10 request and gets one whole response
+  rpc HelloClientStream(stream HelloRequest) returns (HelloResponse) {}
 }
