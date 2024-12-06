@@ -2,8 +2,7 @@ syntax = "proto3";
 
 package bank;
 
-//"github.com/VallabhSLEPAM/go-with-grpc/proto/google/type/date.proto";
-import "proto/google/type/date.proto";
+import "proto/google/type/date.proto"; //github.com/googleapis/googleapis
 
 option go_package = 
     "github.com/VallabhSLEPAM/go-with-grpc/protogen/go/bank";
@@ -15,5 +14,6 @@ message CurrentBalanceRequest {
 
 message CurrentBalanceResponse {
   double amount = 1;
-  google.api.Date current_date = 2 [json_name = "current_date"];
+  google.type.Date current_date = 2 [json_name = "current_date"];
 }
+ 
