@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package bank;
 
-import "proto/google/type/date.proto"; //github.com/googleapis/googleapis
+import "google/type/date.proto"; //github.com/googleapis/googleapis
 
 option go_package = 
     "github.com/VallabhSLEPAM/go-with-grpc/protogen/go/bank";
