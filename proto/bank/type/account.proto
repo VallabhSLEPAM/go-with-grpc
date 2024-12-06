@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package bank;
+
+import "proto/google/type/date.proto"; //github.com/googleapis/googleapis
+
+option go_package = 
+    "github.com/VallabhSLEPAM/go-with-grpc/protogen/go/bank";
+
+
+message CurrentBalanceRequest {
+  string account_number = 1 [json_name = "account_number"];
+}
+
+message CurrentBalanceResponse {
+  double amount = 1;
+  google.type.Date current_date = 2 [json_name = "current_date"];
+}
+ 
