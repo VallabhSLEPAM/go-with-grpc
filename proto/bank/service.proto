@@ -11,4 +11,5 @@ option go_package =
 service BankService{
   rpc GetCurrentBalance(CurrentBalanceRequest) returns (CurrentBalanceResponse) {}
   rpc FetchExchangeRates(ExchangeRateRequest) returns (stream ExchangeRateResponse) {}
+  rpc SummarizeTransactions(stream Transaction) returns (TransactionSummary){}
 }
