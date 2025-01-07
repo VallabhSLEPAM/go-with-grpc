@@ -2,6 +2,8 @@ syntax = "proto3";
 
 package bank;
 
+import "google/type/datetime.proto";
+
 option go_package = "github.com/VallabhSLEPAM/go-with-grpc/protogen/go/bank";
 
 enum TransferStatus{
