@@ -3,7 +3,7 @@ syntax = "proto3";
 
 package resiliency;
 
-option go_package = "github.com/VallabhSLEPAM/go-with-grpc/protogen/go/bank";
+option go_package = "github.com/VallabhSLEPAM/go-with-grpc/protogen/go/resiliency";
 
 message ResiliencyRequest{
   int32 min_delay_second = 1 [json_name="min_delay_second"];
